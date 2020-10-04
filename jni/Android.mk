@@ -25,7 +25,7 @@ endif
 LOCAL_CXXFLAGS += $(ANDROID_FLAGS)
 LOCAL_CFLAGS   += $(ANDROID_FLAGS)
 
-CORE_DIR        := ..
+CORE_DIR        := $(LOCAL_PATH)/..
 LOCAL_MODULE    := libretro
 
 NEED_BPP = 16
@@ -34,7 +34,7 @@ NEED_STEREO_SOUND = 1
 
 TARGET_NAME := mednafen_wswan_libretro
 
-include ../Makefile.common
+include $(CORE_DIR)/Makefile.common
 
 LOCAL_SRC_FILES += $(SOURCES_CXX) $(SOURCES_C)
 EXTRA_GCC_FLAGS := -funroll-loops
